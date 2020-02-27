@@ -1,7 +1,6 @@
 import socket
 import sys
-sys.path.append("/home/aswin/Documents/Courses/Udacity/Intel-Edge/Work/EdgeApp/License_Plate_Recognition/SOLID-Project-Framework/app/plan")
-sys.path.append("/home/aswin/Documents/Courses/Udacity/Intel-Edge/Work/EdgeApp/License_Plate_Recognition/SOLID-Project-Framework/app/specify")
+sys.path.append("../plan")
 from WindSpeedByPlan import *
 
 HOST_IP = "127.0.0.1"
