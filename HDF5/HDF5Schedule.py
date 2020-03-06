@@ -1,7 +1,7 @@
 from datetime import date
 import numpy as np
-from HDF5WriteBySpecify import HDF5Write
-from Logger import Logger
+from .HDF5Write import HDF5Write
+from .Logger import Logger
 
 class Datasets(object):
     def __init__(self):
@@ -24,8 +24,8 @@ class HDF5Schedule():
     CREATE_GROUP = "Group created"
     WRITE_DATASET = "Dataset written"
     
-    def __init__(self):
-        self.logger = Logger()
+    def __init__(self, speed_log_path, direction_log_path):
+        self.logger = Logger(speed=speed_log_path, direction=direction_log_path)
 
     def get_dataset_name(self):
         return date.today().strftime("%Y-%d-%m %H:%M:%S")

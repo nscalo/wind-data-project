@@ -24,7 +24,8 @@ class HDF5Write():
             r = True
         except TypeError as e:
             g = self.f_write[group_name]
-            r = false
+            r = False
+            print(e.args)
 
         return g, r
 
@@ -50,5 +51,3 @@ class HDF5Write():
             self.f_read.close()
         if self.f_write:
             self.f_write.close()
-
-    

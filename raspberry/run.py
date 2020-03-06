@@ -1,7 +1,6 @@
 import socket
 import sys
-sys.path.append("../plan")
-from WindSpeedByPlan import *
+from plan.WindSpeed import *
 
 HOST_IP = "127.0.0.1"
 PORT = sys.argv[1]
