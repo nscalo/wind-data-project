@@ -9,7 +9,7 @@ The components of the project prototype include:
 (3) 10-30 V RS-FXJT-I20 Wind Vane
 (4) Relay Module
 (5) Ribbon Cable
-(6) Breadboard
+(6) PCB/Breadboard
 
 ## How to execute the project
 
@@ -33,11 +33,17 @@ cd raspberry/ && python send.py 5678 | python schedule_hdf.py -p 5678 -g speed -
 
 With the wind data project, it is possible to record weather changes affecting wind speed and direction. A raspberry pi daemon which is calibrated to obtain precise wind speed and direction is run initially which collects data from the instruments on a routine basis. The Wind data Scheduler collects data by connecting to the daemon and records into HDF5 dataset.
 
+## Dataset Logger
+
+The project contains a dataset logger in HDF5. The direction and speed datasets are sized in decreasing order of frequency of data collection. The data is collected daily. Raspberry PI is chosen because it can setup cron jobs to run the data collection schedule and it gives greater power to operate the wind vane and wind speed sensors. 
+
 ## Project in detail
 
 The project is used for environmental purposes, as a DIY toolkit. Wind data measurements are very useful to perform on a land where it is infeasible to use a dataset. This project has industrial applications because the components used for measurement are high precision components. 
 
-![]()
+![Wind Data Project](./wind-data-project.jpeg)
+
+![GPIO-Pinout-Diagram-RPI4](./GPIO-Pinout-Diagram-RPI4.png)
 
 The project is inspired from a Raspberry PI based project on Weather Station.
 
